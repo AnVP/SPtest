@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Front-end by sborkaproject.com -->
+		<meta charset="utf-8" />
+		<title>Project</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+			<script type="text/javascript">
+		;(function(){
+			var modificators = [],
+				nv = navigator,
+				pl = nv.platform.toLowerCase(),
+				ua = nv.userAgent.toLowerCase(),
+				an = nv.appName.toLowerCase(),
+				htmlElement = document.documentElement,
+				ls = localStorage;
+
+			function pli(s){return pl.indexOf(s) > -1;}
+			function uai(s){return ua.indexOf(s) > -1;}
+			function ani(s){return an.indexOf(s) > -1;}
+
+			// Platform
+			var platformClass = uai('iphone') || uai('ipod') || uai('ipad') || uai('android') || uai('iemobile') || uai('blackberry') || uai('bada') ? '_mobile' : '_desktop';
+			modificators.push(platformClass);
+
+			// OS
+			var osClass = '';
+			if (uai('ipad') || uai('iphone') || uai('ipod')) {
+				osClass = '_ios';
+			} else if (uai('android')) {
+				osClass = '_android';
+			} else if (pli('win')) {
+				osClass = '_win';
+			} else if (pli('mac')) {
+				osClass = '_mac';
+			} else if (pli('linux')) {
+				osClass = '_linux';
+			}
+			modificators.push(osClass);
+
+			// Browser
+			var browserClass = '';
+			if (uai('firefox')) {
+				browserClass = '_ff';
+			} else if (uai('opr')) {
+				browserClass = '_opera';
+			} else if (uai('yabrowser')) {
+				browserClass = '_yandex';
+			} else if (uai('edge')) {
+				browserClass = '_edge';
+			} else if (uai('trident') || ani('explorer') || ani('msie')) {
+				browserClass = '_ie';
+			} else if (uai('safari') && !uai('chrome')) {
+				browserClass = '_safari';
+			} else if (uai('chrome')) {
+				browserClass = '_chrome';
+			}
+			modificators.push(browserClass);
+
+			window.environmentObject = {
+				platform: platformClass,
+				os: osClass,
+				browser: browserClass,
+				isLocal: window.location.href.indexOf('http://localhost:') == 0
+			};
+			htmlElement.className += ' ' + modificators.join(' ');
+
+			// SVG sprites
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'assets/svg/sprite.svg', true);
+			xhr.overrideMimeType('image/svg+xml');
+			
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+					function waitForBody(){
+						if(document.body){
+							var containerClass = 'invisible-container';
+							var container = document.querySelector('.'+containerClass);
+							if(!container){
+								container = document.createElement('div');
+								container.className = containerClass;
+								document.body.insertBefore(container, document.body.firstChild);
+							}
+							container.appendChild(xhr.responseXML.documentElement);
+						} else {
+							setTimeout(waitForBody, 16);
+						}
+					}
+
+					waitForBody();	
+				};
+			}
+
+			xhr.send('');
+		})();
+	</script>
+
+
+			<link rel="stylesheet" href="assets/css/styles.css?hash" />
+	</head>
+	<body>
+
+		<div class="wrapper">
+
+<div class="header">
+	<div class="container">
+			<nav class="menu">
+			<a href="pay.html" class="menu__item _active" style="margin-right: 15px;">Страница оплаты</a>
+			<a href="#" class="menu__item _active" style="margin-right: 15px;">Menu Item 2</a>
+			<a href="#" class="menu__item _active" style="margin-right: 15px;">Menu Item 3</a>
+	</nav>
+
+	</div>
+</div>
+	<div class="container">
+
+		<div style="padding:20px 0;">
+			<button class="button">
+	Buy something
+	<span class="button__chevron-right">&gt;</span>
+</button>
+
+		</div>
+
+		<div style="padding:20px 0;">
+			
+			<h2 style="margin-bottom: 15px;">Пример использования циклов и функции range():</h2>
+			
+			<div class="row">
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>6</span>
+					<span>7</span>
+					<span>8</span>
+					<span>9</span>
+					<span>10</span>
+					<span>11</span>
+					<span>12</span>
+			</div>
+
+		</div>
+
+		<div style="padding:20px 0;">
+
+			<h2 style="margin-bottom: 15px;">Пример с переменными:</h2>
+
+				<div style="margin-bottom: 15px;">
+					<h3>Item 1</h3>
+					<p>Desc 1</p>
+				</div>
+				<div style="margin-bottom: 15px;">
+					<h3>Item 2</h3>
+					<p>Desc 2</p>
+				</div>
+
+		</div>
+
+		
+		<p style="margin-bottom: 20px;">Это текст для теста функций Awesome!</p>
+
+			<div class="debug" style="margin-bottom: 20px;">
+				<h2 style="margin-bottom: 15px;">Debug:</h2>
+				<p>Эта информация будет выводиться только при DEVELOP = true.</p>
+			</div>
+
+	</div>
+		</div>
+
+			<script src="assets/js/bundle.js?hash"></script>
+	</body>
+</html>
