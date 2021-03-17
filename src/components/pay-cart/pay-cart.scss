@@ -1,0 +1,29 @@
+.pay-cart__content {
+  padding: 40px;
+}
+
+.pay-cart__title {
+  margin-bottom: 30px;
+}
+
+.pay-cart__promo {
+  border-top: 1px solid #CFCFCF;
+  border-bottom: 1px solid #CFCFCF;
+}
+
+.pay-cart__promo-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.pay-cart__input {
+  width: 100%;
+  margin-right: 10px;
+  padding-top: 0;
+}
+
+.pay-cart__price {
+  padding-right: 56px;
+}

@@ -1,0 +1,11 @@
+{% macro formRadio(props) %}
+	<div class="form-radio {{ props.class }}">
+		<input type="radio" name="radio" id="{{ props.id }}" value="{{ props.id }}" {{ props.checked }}>
+		<label for="{{ props.id }}" aria-label={{ props.title }}>
+			{{ props.label }}
+			{% if props.src %}
+				<img src={{ props.src }} alt=''>
+			{% endif %}
+		</label>
+	</div>
+{% endmacro %}

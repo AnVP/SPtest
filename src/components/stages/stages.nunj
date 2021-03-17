@@ -1,0 +1,10 @@
+{% macro stages(class) %}
+	<ul class='stages {{ class }}'>
+		{% for item in stageItems %}
+			<li class='stages__item {{ item.status }}'>
+				<span class='stages__number'>{{ item.number }}</span>
+				{{ item.desc }}
+			</li>
+		{% endfor %}
+		</ul>
+{% endmacro %}

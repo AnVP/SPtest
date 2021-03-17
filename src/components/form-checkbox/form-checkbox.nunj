@@ -1,0 +1,8 @@
+{% macro formCheckbox(props) %}
+	<div class="form-checkbox {{ props.class }}">
+		<input type="checkbox" name="{{ props.id }}" id="{{ props.id }}" value="{{ props.id }}" {{ props.checked }}>
+		<label for="{{ props.id }}" aria-label={{ props.title }}>
+			{{ props.label }}
+		</label>
+	</div>
+{% endmacro %}

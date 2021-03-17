@@ -1,0 +1,11 @@
+{% macro formInput(props) %}
+	<div class="form-input {{ props.class }}">
+		<input type="text" name={{ props.name }} id="{{ props.id }}" value="" placeholder={{ props.placeholder }}>
+		<label for="{{ props.id }}" aria-label={{ props.title }}>
+			{{ props.label }}
+			{% if props.desc %}
+				<span class='form-input__hint'>{{ props.desc }}</span>
+			{% endif %}
+		</label>
+	</div>
+{% endmacro %}

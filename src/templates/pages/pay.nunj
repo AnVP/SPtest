@@ -1,0 +1,205 @@
+{% extends "../ext/base.nunj" %}
+
+{% block title %}Страница оплаты / {{ super() }}{% endblock title %}
+
+{% from "../../components/logo/logo.nunj" import logo %}
+{% from "../../components/main-nav/main-nav.nunj" import mainNav %}
+{% from "../../components/stages/stages.nunj" import stages %}
+{% from "../../components/form-radio/form-radio.nunj" import formRadio %}
+{% from "../../components/form-input/form-input.nunj" import formInput %}
+{% from "../../components/form-checkbox/form-checkbox.nunj" import formCheckbox %}
+
+{% block content %}
+	{% include '../../components/header-page/header-page.nunj' %}
+
+	<main class='main-page'>
+		<div class='main-page__content'>
+			<section class='pay' aria-label='pay'>
+				{{ stages("pay__stages") }}
+				<div class='pay__wrap'>
+					<form action='#' name='billing' class='main-form pay__form'>
+						<h1 class='main-form__title section-title'>Billing Information</h1>
+						<div class='main-form__radio-wrap'>
+							{{ formRadio({
+								class: "main-form__radio-input",
+								id: "card",
+								title: "card",
+								label: "Pay with Credit Card",
+								checked: "checked"})
+							}}
+							{{ formRadio({
+								class: "main-form__radio-input",
+								id: "paypal",
+								title: "paypal",
+								label: "",
+								checked: "",
+								src: "./assets/images/paypal.svg"})
+							}}
+						</div>
+						<div class='main-form__content'>
+							{{ formInput({
+								class: "main-form__input",
+								name: "name",
+								id: "name",
+								title: "name",
+								label: "Name on card",
+								placeholder: "Placeholder Text"})
+							}}
+							<div class='main-form__group'>
+								{{ formInput({
+									class: "main-form__input",
+									name: "number",
+									id: "number",
+									title: "number",
+									label: "Card number",
+									placeholder: ""})
+								}}
+								{{ formInput({
+									class: "main-form__input",
+									name: "number-2",
+									id: "number-2",
+									title: "number-2",
+									label: "",
+									placeholder: ""})
+								}}
+								{{ formInput({
+									class: "main-form__input",
+									name: "number-3",
+									id: "number-3",
+									title: "number-3",
+									label: "",
+									placeholder: ""})
+								}}
+								{{ formInput({
+									class: "main-form__input",
+									name: "number-4",
+									id: "number-4",
+									title: "number-4",
+									label: "",
+									placeholder: ""})
+								}}
+							</div>
+							<div class='main-form__group'>
+								{{ formInput({
+									class: "main-form__input",
+									name: "date",
+									id: "date",
+									title: "date",
+									label: "Expire date",
+									placeholder: ""})
+								}}
+								{{ formInput({
+									class: "main-form__input",
+									name: "cvv",
+									id: "cvv",
+									title: "CVV code",
+									label: "CVV code",
+									placeholder: "",
+									desc: "?"})
+								}}
+							</div>
+						</div>
+						<div class='main-form__checkbox-wrap'>
+							{{ formCheckbox({
+								class: "main-form__checkbox-input",
+								id: "checkbox-1",
+								title: "checkbox-1",
+								label: "Save information of this credit card",
+								checked: "checked"})
+							}}
+							<div class="form-checkbox main-form__checkbox-input">
+								<input type="checkbox" name="checkbox-2" id="checkbox-2" value="">
+								<label for="checkbox-2" aria-label="accept">
+									<span>I accept the &zwnj;<a href="#">terms and conditions</a>&zwnj; and the&nbsp;<a href="#">Privacy Policies</a></span>
+								</label>
+							</div>
+						</div>
+						<div class='main-form__btn-wrap'>
+							<button type='button' class='btn btn_theme_light'>Back</button>
+							<button type='submit' class='btn'>Check Out</button>
+						</div>
+					</form>
+				</div>
+			</section>
+		</div>
+		<div class='main-page__aside'>
+			<section class='pay-cart' aria-label='cart'>
+				<div class='pay-cart__content'>
+					<h2 class='pay-cart__title section-title'>My basket</h2>
+					<ul class='pay-cart__list'>
+						<li class='pay-cart__item card'>
+							<img src='./assets/images/product-1.jpg' class='card__img' alt="product" />
+							<div class='card__content'>
+								<h3 class='card__title'>Amet minim mollit non
+									deserunt ullamco est sit</h3>
+								<div class='card__row'>
+									<form class="card__form count-form">
+										<button type="button" class="count-form__btn count-form__btn_type_minus" aria-label="Минус">
+										</button>
+										<input id="count-form1" type="text" value="1" name="count-form" aria-label='count'>
+										<button type="button" class="count-form__btn count-form__btn_type_plus" aria-label="Плюс">
+										</button>
+									</form>
+									<p class='card__sum' data-price='525'>$ <span>525</span></p>
+								</div>
+							</div>
+							<button class='card__delete-button' type='button'></button>
+						</li>
+						<li class='pay-cart__item card'>
+							<img src='./assets/images/product-2.jpg' class='card__img' alt="product" />
+							<div class='card__content'>
+								<h3 class='card__title'>Amet minim mollit non
+								</h3>
+								<div class='card__row'>
+									<form class="card__form count-form" name='count-form'>
+										<button type="button" class="count-form__btn count-form__btn_type_minus" aria-label="Минус">
+										</button>
+										<input id="count-form1" type="text" value="1" name="count-form" aria-label='count'>
+										<button type="button" class="count-form__btn count-form__btn_type_plus" aria-label="Плюс">
+										</button>
+									</form>
+									<p class='card__sum' data-price='100'>$ <span>100</span></p>
+								</div>
+							</div>
+							<button class='card__delete-button' type='button'></button>
+						</li>
+					</ul>
+				</div>
+				<div class='pay-cart__promo pay-cart__content'>
+					<h2 class='pay-cart__title section-title'>Promo code</h2>
+					<form class='pay-cart__promo-form'>
+						{{ formInput({
+							class: "pay-cart__input",
+							name: "name",
+							id: "name",
+							title: "name",
+							label: "",
+							placeholder: "Placeholder Text"})
+						}}
+						<button type='submit' class='btn'>Apply</button>
+					</form>
+				</div>
+				<div class='pay-cart__price pay-cart__content'>
+					<table class='pay-cart__table main-table'>
+						<tr>
+							<td>Subtotal</td>
+							<td>$1 050</td>
+						</tr>
+						<tr>
+							<td>Tax</td>
+							<td>$100</td>
+						</tr>
+						<tr>
+							<td>Shipping</td>
+							<td>$150</td>
+						</tr>
+						<tr>
+							<td>Total</td>
+							<td>$1 300</td>
+						</tr>
+					</table>
+				</div>
+			</section>
+		</div>
+	</main>
+{% endblock content %}

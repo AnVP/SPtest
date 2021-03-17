@@ -1,0 +1,7 @@
+{% macro logo() %}
+  <a href='/' class='logo'>
+	<svg width="89" height="32" viewBox="0 0 89 32" fill="none">
+		<use xlink:href="#icon-logo"></use>
+	</svg>
+  </a>
+{% endmacro %}

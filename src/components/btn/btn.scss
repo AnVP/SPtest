@@ -1,0 +1,28 @@
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 7px 30px;
+  border: 1px solid #3366FF;
+  border-radius: 3px;
+  background-color: #3366FF;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:focus {
+	outline: none;
+  }
+
+  &:hover {
+	opacity: 0.8;
+  }
+
+  &_theme_light {
+	background-color: #FFFFFF;
+	border: 1px solid #CFCFCF;
+	color: #000000;
+  }
+}

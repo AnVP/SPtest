@@ -1,0 +1,30 @@
+.main-page {
+  display: flex;
+  justify-content: space-between;
+  min-height: calc(100vh - 81px);
+}
+
+.main-page__content {
+  width: calc(100% / 4 * 3);
+
+  @media (max-width: 1200px) {
+	width: calc(100% / 3 * 2 - 10px);
+  }
+
+  @media (max-width: 1024px) {
+	width: 100%;
+  }
+}
+
+.main-page__aside {
+  width: calc(100% / 4);
+  border-left: 1px solid #CFCFCF;
+
+  @media (max-width: 1200px) {
+	width: calc(100% / 3 + 10px);
+  }
+
+  @media (max-width: 1024px) {
+	display: none;
+  }
+}

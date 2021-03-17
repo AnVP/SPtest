@@ -1,0 +1,63 @@
+.form-input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 24px;
+}
+
+.form-input input {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 14px;
+  line-height: 24px;
+  color: #000000;
+  border: none;
+  border-radius: 3px;
+  background-color: #EDEDF1;
+  appearance: none;
+  resize: none;
+
+  &::placeholder {
+	font: inherit;
+	font-size: 14px;
+	line-height: 24px;
+	color: #8E90A6;
+  }
+
+  &:not(:disabled):hover,
+  &:not(:disabled):focus,
+  &.active {
+	outline: none;
+  }
+
+  &:disabled {
+	opacity: 0.6;
+  }
+}
+
+.form-input label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 24px;
+  color: #555770;
+}
+
+.form-input__hint {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-color: #DBDBDB;
+  font-size: 10px;
+  line-height: 150%;
+  letter-spacing: 0.2px;
+  color: #000000;
+  text-align: center;
+  vertical-align: center;
+  border-radius: 50%;
+}

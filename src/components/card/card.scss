@@ -1,0 +1,58 @@
+.card {
+  display: flex;
+  width: 100%;
+  margin-bottom: 40px;
+
+  &:last-of-type {
+	margin-bottom: 0;
+  }
+}
+
+.card__img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.card__content {
+  width: 180px;
+  margin-left: 12px;
+  margin-right: auto;
+}
+
+.card__title {
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.card__row {
+  display: flex;
+  align-items: center;
+}
+
+.card__sum {
+  margin-left: 25px;
+}
+
+.card__delete-button {
+  @include btn-reset;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../images/close.svg");
+  cursor: pointer;
+  transition: opacity 0.3s;
+
+  &:focus {
+	outline: none;
+  }
+
+  &:hover {
+	opacity: 0.8;
+  }
+}

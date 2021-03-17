@@ -1,0 +1,18 @@
+.main-table {
+  width: 100%;
+
+  & tr {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	font-size: 14px;
+	line-height: 34px;
+	font-weight: 400;
+	color: #000000;
+
+	&:last-of-type {
+	  font-weight: 700;
+	  font-size: 18px;
+	}
+  }
+}

@@ -1,0 +1,41 @@
+.count-form {
+  display: flex;
+  justify-content: space-between;
+  width: 82px;
+  height: 20px;
+
+  & input {
+	width: 22px;
+	border: none;
+	background-color: transparent;
+	text-align: center;
+	outline: none;
+  }
+
+  &__btn {
+	@include btn-reset;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: opacity 0.3s;
+
+	&_type_minus {
+	  background-image: url("../images/minus.svg");
+	}
+
+	&_type_plus {
+	  background-image: url("../images/plus.svg");
+	}
+
+	&:focus {
+	  outline: none;
+	}
+
+	&:hover {
+	  opacity: 0.8;
+	}
+  }
+}

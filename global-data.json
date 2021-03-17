@@ -1,0 +1,73 @@
+{
+  "menuItems": [
+	{
+	  "name": "Страница оплаты",
+	  "path": "pay.html"
+	},
+	{
+	  "name": "Menu Item 2",
+	  "path": "#"
+	},
+	{
+	  "name": "Menu Item 3",
+	  "path": "#"
+	}
+  ],
+  "someData": [
+	{
+	  "title": "Item 1",
+	  "text": "Desc 1"
+	},
+	{
+	  "title": "Item 2",
+	  "text": "Desc 2"
+	}
+  ],
+  "navItems": [
+	{
+	  "name": "Women’s",
+	  "path": "#"
+	},
+	{
+	  "name": "Men’s",
+	  "path": "#"
+	},
+	{
+	  "name": "Home",
+	  "path": "#"
+	},
+	{
+	  "name": "Travel",
+	  "path": "#"
+	},
+	{
+	  "name": "Beauty",
+	  "path": "#"
+	},
+	{
+	  "name": "Sale",
+	  "path": "#"
+	}
+  ],
+  "stageItems": [
+	{
+	  "number": "1",
+	  "desc": "Account",
+	  "status": "stages__item_status_active"
+	},
+	{
+	  "number": "2",
+	  "desc": "Shipping",
+	  "status": "stages__item_status_active"
+	},
+	{
+	  "number": "3",
+	  "desc": "Billing",
+	  "status": "stages__item_status_current"
+	},
+	{
+	  "number": "4",
+	  "desc": "Review"
+	}
+  ]
+}
